@@ -17,7 +17,8 @@ const port = process.env.PORT || 5600;
 app.use("/", userRoute);
 
 app.get("/home", (req, res) => {
-  res.status(200).json({
+  res.set('Content-Type','text/html; charset=utf-8')
+  res.status(200).send({
     Welcome:"Hello HRMS",
     Msg:"This is Home page of HRMS."
   })
