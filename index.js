@@ -16,6 +16,13 @@ app.use(sessionMiddleware);
 const port = process.env.PORT || 5600;
 app.use("/", userRoute);
 
+app.get("/home", (req, res) => {
+  res.status(200).json({
+    Welcome:"Hello HRMS",
+    Msg:"This is Home page of HRMS."
+  })
+})
+
 dbConn().then(() => {
   app.listen(port, () => {
     console.log("server is live on", port);
